@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/products_grid.dart';
 
-import '../models/products.dart';
+import '../providers/product.dart';
 
 class ProductsOverviewScreen extends StatelessWidget {
   @override
