@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 class ProdutsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final productsData = Provider.of<Products>(context);
-    final products = productsData.itmes;
+    var productsData = Provider.of<Products>(context);
+    var products = productsData.itmes;
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
