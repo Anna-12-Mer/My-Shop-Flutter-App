@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'product.dart';
 
 class Products with ChangeNotifier {
@@ -19,13 +20,31 @@ class Products with ChangeNotifier {
         imgUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trous')
   ];
+  // var _showFavoritesOnly = false;
   List<Product> get itmes {
+    // if (_showFavoritesOnly) {
+    //   return _items.where((prodItem) => prodItem.isFavorite).toList();
+    // }
     return [..._items];
+  }
+  //filtering ligique 
+  List <Product> get favoriteItem {
+    return _items.where((prodItem) =>  prodItem.isFavorite).toList();
   }
 
   Product findById(String id) {
     return _items.firstWhere((prod) => prod.id == id);
   }
+
+  // void showFavoritesOnly() {
+  //   _showFavoritesOnly = true;
+  //   notifyListeners();
+  // }
+
+  // void showAll() {
+  //   _showFavoritesOnly = false;
+  //   notifyListeners();
+  // }
 
   void addProduct() {
     // _items.add(value);

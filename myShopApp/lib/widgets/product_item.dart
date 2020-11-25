@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myShopApp/providers/product.dart';
-import 'package:myShopApp/screens/products_details_screen.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/product.dart';
+import '../screens/products_details_screen.dart';
 
 class ProductItem extends StatelessWidget {
   // final String id;
@@ -11,7 +12,7 @@ class ProductItem extends StatelessWidget {
   // ProductItem(this.id, this.title, this.imgUrl);
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context);
+    final product = Provider.of<Product>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GestureDetector(
